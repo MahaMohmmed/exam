@@ -1,0 +1,61 @@
+@model Activites
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+            <link rel="stylesheet" href="~/css/style.css" />
+
+</head>
+<body>
+    <h1>Dojo Activity Center </h1>
+    <div class="bar">
+        <a asp-action="Dashboard" asp-controller="Exam">Home</a>
+        <a asp-action="LogOut" asp-controller="Home">LogOut</a>
+    </div>
+        <h2>Create New Activity</h2>
+        <form asp-action="CreateActivity" asp-controller="Exam" method="POST">
+                <div>
+                    <label asp-for="Titel"></label>
+                    <input asp-for="Titel" /> <br />
+                    <span class="text-danger" asp-validation-for="Titel"></span>
+                </div>
+                <div>
+                    <label asp-for="Date"></label>
+                    <input asp-for="Date" /> <br />
+                    <span class="text-danger" asp-validation-for="Date"></span>
+                </div>
+                <div>
+                    <label asp-for="Time"></label>
+                    <input asp-for="Time" /> <br />
+                    <span class="text-danger" asp-validation-for="Time"></span>
+                </div>
+                <div>
+                    <label asp-for="Duration"></label>
+                    <input asp-for="Duration" /> <br />
+                    <span class="text-danger" asp-validation-for="Duration"></span>
+                </div>
+                    <select asp-for="DurationType">
+                        
+                                
+                                <option value="Hours">Hours</option>
+                                <option value="Minutes">Minutes</option>
+                                <option value="Days">Days</option>
+                    </select>
+                
+                </div>
+                <div>
+                    <label asp-for="Descripton"></label>
+                    <input asp-for="Descripton" /> <br />
+                    <span class="text-danger" asp-validation-for="Descripton"></span>
+                </div>
+                    <button type="submit" class="btn btn-sm btn-primary" >Create Activity</button>
+
+
+
+
+        </form>
+</body>
+</html>
